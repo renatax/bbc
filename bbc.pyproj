@@ -29,6 +29,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="infant\forms.py" />
     <Compile Include="infant\models.py" />
     <Compile Include="infant\tests.py" />
     <Compile Include="infant\views.py" />

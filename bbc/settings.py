@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/sl_62469430/Documents/Django/bbc/bbcdb.db',  
+        'NAME': 'bbcdb.db',  
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'infant',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging

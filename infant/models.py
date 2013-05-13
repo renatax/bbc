@@ -1,6 +1,6 @@
 from django.db import models
 import datetime
-from django.forms import ModelForm
+
 
 class feedingL(models.Model):
   user=models.TextField()
@@ -38,21 +38,6 @@ class diapering(models.Model):
   ointment=models.BooleanField(choices = CHOICES, default = False)
   time=models.DateTimeField(default=datetime.datetime.now)
 
-class FeedingLForm(ModelForm):
-  class Meta:
-    model = feedingL
-
-class FeedingSForm(ModelForm):
-  class Meta:
-    model = feedingS
-
-class napForm(ModelForm):
-  class Meta:
-    model = nap
-
-class diaperingForm(ModelForm):
-  class Meta:
-    model = diapering
 
 
 # Create your models here.
