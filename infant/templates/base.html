@@ -1,0 +1,17 @@
+{% load dajaxice_templatetags %}
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>{% block title %}Base{% endblock %}</title>
+        <script src = "{% static "js/jquery-1.9.1.min.js" %}"></script>>
+        <script src = "{% static "js/jquery.ba-serializeobject.min.js" %}"></script>
+        <script src = "{% static "js/jquery.dajax.core.js" %}"></script>
+        {% dajaxice_js_import %}
+    </head>
+    <body>
+    <div id="content">
+    {% block content %}{% endblock %}
+    </div>
+    </body>
+</html>
