@@ -29,6 +29,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="auth\models.py" />
+    <Compile Include="auth\tests.py" />
+    <Compile Include="auth\views.py" />
+    <Compile Include="auth\__init__.py" />
     <Compile Include="infant\ajax.py" />
     <Compile Include="infant\forms.py" />
     <Compile Include="infant\models.py" />
@@ -53,6 +57,7 @@
     <Folder Include="infant\" />
     <Folder Include="infant\templates" />
     <Folder Include="media\" />
+    <Folder Include="auth\" />
     <Folder Include="static\" />
     <Folder Include="static\js\" />
   </ItemGroup>
