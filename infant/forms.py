@@ -2,24 +2,26 @@ from django.forms import ModelForm
 from django import forms
 from infant.models import *
 
-class FeedingLForm(ModelForm):
+class FeedingLiquidsForm(ModelForm):
   class Meta:
-    model = FeedingL
+    model = FeedingLiquids
+    exclude = ['user']
 
-class FeedingSForm(ModelForm):
+class FeedingSolidsForm(ModelForm):
   class Meta:
-    model = FeedingS
-
+    model = FeedingSolids
+    exclude = ['user']
 class NapForm(ModelForm):
   class Meta:
     model = Nap
-
+    exclude = ['user']
 class DiaperingForm(ModelForm):
   class Meta:
     model = Diapering
-
+    exclude = ['user']
 class RouteForm(forms.Form):
   ACTION_CHOICE = (
+      ('',   '-- choose an action --'),
       ('FL', 'Feed Liqid Food'),
       ('FS', 'Feed Solid Food'),
       ('NP', 'Take A Nap'),
@@ -35,8 +37,7 @@ class RouteForm(forms.Form):
       ('B', 'Breast Milk'),
       ('O', 'Other'),
   )
-
-
   action = forms.ChoiceField(choices=ACTION_CHOICE)
   solid = forms.ChoiceField(choices=SOLID_CHOICE)
   liquid = forms.ChoiceField(choices=LIQUID_CHOICE)
+  action.widget.attrs["onchange"]="Dajaxice.infant.action_select(Dajax.process, {'option':this.value})"

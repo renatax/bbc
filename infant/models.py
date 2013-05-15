@@ -8,41 +8,38 @@ class Action(models.Model):
     abstract = True
   def __unicode__(self):
     return str(self.pk)
+
+class Food(models.Model):
+    CHOICE = (('S','Solid Food'),('L', 'Liquid Food'))
+    UNITS = (('Oz','Ounce'),('Jar','Jar'),('Pc','Piece'))
+    name = models.CharField(max_length=30)
+    unit = models.CharField(max_length=20,choices=UNITS)
+    food_type = models.CharField(max_length=20, choices = CHOICE)
+
 class Feeding(Action):
   helper = models.CharField(max_length=20,default=None)
   help_type = models.CharField(max_length=20,default=None)
-  food_type = models.CharField(max_length=20)
+  time=models.DateTimeField(default=datetime.datetime.now)
   amount = models.DecimalField(max_digits=5, decimal_places=2)  
-  time=models.DateTimeField(default=datetime.datetime.now)
 
-class FeedingL(models.Model):
-  helper=models.TextField()
-  help_type =models.TextField()
-  type=models.TextField()
-  amount=models.TextField()
-  time=models.DateTimeField(default=datetime.datetime.now)
 
-class FeedingS(models.Model):
-  user=models.TextField()
-  helper=models.TextField()
-  help_type =models.TextField()
-  infant=models.TextField()
-  type=models.TextField()
-  amount=models.TextField()
-  time=models.DateTimeField(default=datetime.datetime.now)
+class FeedingLiquids(Feeding):
+  food = models.ForeignKey(Food,limit_choices_to={'food_type':'L'})
 
+class FeedingSolids(Feeding):
+  food = models.ForeignKey(Food,limit_choices_to={'food_type':'S'})
+  
 class Nap(Action):
   startAt=models.DateTimeField(default=datetime.datetime.now)
   endAt=models.DateTimeField(default=datetime.datetime.now)
-
 class Diapering(Action):
   CHOICES = (
         (True, 'Yes'),
         (False, 'No'),
            )
-  d_type=models.TextField()
   ointment=models.BooleanField(choices = CHOICES, default = False)
-  time=models.DateTimeField(default=datetime.datetime.now)
+  bm =models.BooleanField(choices = CHOICES, default = False) 
+  wet = models.BooleanField(choices = CHOICES, default = False)
 
 
 # Create your models here.

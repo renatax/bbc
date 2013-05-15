@@ -5,4 +5,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 #django Mixin for class-based views???
 def test(request):
-    return render(request,'test.html',{'form':RouteForm()})
+    return render(request,'test.html',{'routeform':RouteForm()})
