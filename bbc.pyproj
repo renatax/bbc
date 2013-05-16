@@ -58,18 +58,21 @@
     <Folder Include="infant\templates" />
     <Folder Include="media\" />
     <Folder Include="auth\" />
+    <Folder Include="templates" />
     <Folder Include="static\" />
     <Folder Include="static\js\" />
+    <Folder Include="templates\registration" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bbcdb.db" />
-    <Content Include="infant\templates\base.html" />
     <Content Include="infant\templates\test.html" />
     <Content Include="README.md" />
     <Content Include="static\js\dajaxice.core.js" />
     <Content Include="static\js\jquery-1.9.1.min.js" />
     <Content Include="static\js\jquery.ba-serializeobject.min.js" />
     <Content Include="static\js\jquery.dajax.core.js" />
+    <Content Include="templates\base.html" />
+    <Content Include="templates\registration\login.html" />
     <Content Include="testgit.txt" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />

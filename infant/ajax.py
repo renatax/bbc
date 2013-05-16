@@ -44,7 +44,7 @@ def action_select(request, option):
             form = NapForm()
         elif option == u'DP':
             form = DiaperingForm()
-        out.append(form.as_p())
+        out.append(form.as_table())
         dajax.assign('#id_form2','innerHTML', out)
     return dajax.json()
 

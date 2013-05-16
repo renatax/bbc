@@ -120,6 +120,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(ROOT_PATH,'templates'),
 )
 
 INSTALLED_APPS = (
@@ -139,6 +140,8 @@ INSTALLED_APPS = (
     'dajax',
     'south',
 )
+
+LOGIN_REDIRECT_URL = 'test'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

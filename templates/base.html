@@ -3,15 +3,27 @@
 
 <html>
     <head>
+        <!--<link rel="stylesheet" type="text/css" href="{% static "custom.css" %}" />-->
         <title>{% block title %}Base{% endblock %}</title>
         <script src = "{% static "js/jquery-1.9.1.min.js" %}"></script>>
         <script src = "{% static "js/jquery.ba-serializeobject.min.js" %}"></script>
         <script src = "{% static "js/jquery.dajax.core.js" %}"></script>
         {% dajaxice_js_import %}
     </head>
+
+    <header>
+        <nav class="round">
+            <ul>
+                {% if user.is_authenticated %}
+                    <li> <a href="/logout">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
     <body>
-    <div id="content">
-    {% block content %}{% endblock %}
-    </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
     </body>
 </html>

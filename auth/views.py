@@ -21,8 +21,7 @@ def login_user(request):
                 state = "Your account is not active, please contact the site admin."
         else:
             state = "Your username and/or password were incorrect."
-
-    return render_to_response('registration/login.html',{'state':state, 'username': })
+    return render_to_response('registration/login.html',{'state':state, 'username': username})
 
 def logout_view(request):
     logout(request)

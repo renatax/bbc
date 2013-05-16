@@ -1,6 +1,8 @@
 from django.db import models
 import datetime
 
+
+
 class Action(models.Model):
   user = models.CharField(max_length=20)
   infant = models.CharField(max_length=20) 
